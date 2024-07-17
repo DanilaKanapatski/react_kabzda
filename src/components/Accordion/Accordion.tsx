@@ -1,6 +1,16 @@
-export function Accordion(props:any) {
-    debugger
-    return (
+type AccordionPropsType = {
+    text: string
+    collapsed: boolean
+}
+
+export function Accordion(props: AccordionPropsType) {
+    if (props.collapsed) {
+        return (
+            <div>
+                <AccordionTitle text={props.text } />
+            </div>
+        )
+    } else return (
         <div>
             <AccordionTitle text={props.text } />
             <AccordionBody />
@@ -8,7 +18,11 @@ export function Accordion(props:any) {
     )
 }
 
-function AccordionTitle(props:any) {
+type AccordionTitlePropsType = {
+    text: string
+}
+
+function AccordionTitle(props:AccordionTitlePropsType) {
     debugger
     return (
         <h3>{props.text}</h3>

@@ -14,13 +14,17 @@ function App() {
     <div >
       <PageTitle title='fdff'/>
       <Rating value={3} />
-      <Accordion text='fdfsfdfdffd'/>
+      <Accordion text='fdfsfdfdffd' collapsed={false } />
       <Rating value={4} />
     </div>
   );
 }
 
-function PageTitle(props:any) {
+type PageTitlePropsType = {
+  title : string
+}
+
+function PageTitle(props:PageTitlePropsType) {
   return <h1>{props.title}</h1>
 }
 
